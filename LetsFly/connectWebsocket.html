@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Booking System</title>
+    <style>
+        .seat {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .available {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .booked {
+            background-color: #f44336;
+            color: white;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flight Seat Booking</h1>
+    <div id="seatContainer"></div>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+        const seatContainer = document.getElementById('seatContainer');
+        
+        
+        function displaySeats(seats) {
+            seatContainer.innerHTML = ''; 
+            seats.forEach(seat => {
+                const seatElement = document.createElement('div');
+                seatElement.classList.add('seat');
+                seatElement.classList.add(seat.status);
+                seatElement.textContent = `Seat ${seat.seatId}`;
+                
+                if (seat.status === 'available') {
+                    seatElement.onclick = () => bookSeat(seat.seatId);
+                } else {
+                    seatElement.onclick = () => releaseSeat(seat.seatId);
+                }
+                
+                seatContainer.appendChild(seatElement);
+            });
+        }
+
+        
+        socket.onmessage = (event) => {
+            const message = JSON.parse(event.data);
+
+            if (message.type === 'seatData') {
+                
+                displaySeats(message.seats);
+            } else if (message.type === 'seatUpdate') {
+                
+                const seat = message.seat;
+                const seatElement = Array.from(seatContainer.children)
+                    .find(el => el.textContent === `Seat ${seat.seatId}`);
+                
+                if (seatElement) {
+                    seatElement.classList.remove('available', 'booked');
+                    seatElement.classList.add(seat.status);
+                    seatElement.onclick = seat.status === 'available'
+                        ? () => bookSeat(seat.seatId)
+                        : () => releaseSeat(seat.seatId);
+                }
+            }
+        };
+
+    
+        function bookSeat(seatId) {
+            socket.send(JSON.stringify({ type: 'bookSeat', seatId }));
+        }
+
+        
+        function releaseSeat(seatId) {
+            socket.send(JSON.stringify({ type: 'releaseSeat', seatId }));
+        }
+        
+    
+        socket.onopen = () => console.log('Connected to WebSocket server');
+        socket.onclose = () => console.log('Disconnected from WebSocket server');
+    </script>
+</body>
+</html>

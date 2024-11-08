@@ -1,0 +1,27 @@
+
+[
+    {
+        "flight_number": "AA123",
+        "origin": "KM111",
+        "destination": "cape town",
+        "departure_time": "2024-11-01 08:00:00",
+        "arrival_time": "2024-11-01 11:30:00"
+    },
+    {
+        "flight_number": "BA456",
+        "origin": "matsapha",
+        "destination": "durban",
+        "departure_time": "2024-11-01 14:00:00",
+        "arrival_time": "2024-11-01 17:30:00"
+    },
+    {
+        "flight_number": "CA789",
+        "origin": "matsapha",
+        "destination": "jozi",
+        "departure_time": "2024-11-02 09:00:00",
+        "arrival_time": "2024-11-02 12:30:00"
+    }
+]
+
+
+

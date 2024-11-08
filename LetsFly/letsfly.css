@@ -1,0 +1,387 @@
+
+#Topbar {
+    background-color: red;
+    min-height: 80px;
+    margin-top: 20px;
+    color: white;
+    padding: 8px;
+}
+
+
+#menu_buttons {
+    color: white;
+    width: 100px;
+    font-size: 15px;
+    display: inline-block;
+    font-family: 'Trebuchet MS';
+}
+
+#Topbar a {
+    text-decoration: none;
+    color: white;
+}
+
+    #Topbar a img {
+        margin-right: 10px;
+    }
+
+.homepage_pics {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    background-color: none;
+    height: 800px;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    padding: 8px
+}
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 10s;
+}
+
+@keyframes fade {
+
+    from {
+        opacity: 0.6
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+    .slide:first-child {
+        opacity: 1;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+.text {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    top: 200px;
+    left: 5%;
+    padding: 60px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FF0000;
+    color: white;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+/* Attractions section */
+#attractions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+article {
+    width: 300px;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+    article img {
+        width: 100%;
+        height: auto;
+    }
+
+    article h3 {
+        margin-top: 0;
+    }
+
+#slide img {
+}
+
+#Text {
+    height: 40px;
+    width: 300px;
+    border-radius: 4px;
+    border: solid 1px #aaa;
+}
+
+#Submit {
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+}
+
+#login_section {
+    background-color: white;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 8px;
+}
+
+#Booking {
+    background-color: none;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 8px
+}
+
+form {
+    background-color: gainsboro;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+select, input[type="text"], input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+    input[type="checkbox"] + label {
+        display: inline;
+    }
+
+select:focus, input[type="text"]:focus {
+    border-color: rgb(236, 43, 43);
+    outline: none;
+}
+
+
+
+#class, #airport, #date {
+    background-color: #f9f9f9;
+}
+
+
+button {
+    background-color: rgb(236, 41, 41);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover {
+        background-color: rgb(231, 43, 43);
+    }
+
+input[type="submit"] {
+    background-color: rgb(204, 14, 14);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type="submit"]:hover {
+        background-color: #cc0b1b;
+    }
+
+#gender {
+    color: black;
+}
+
+.table-edit {
+    width: 50%;
+    margin: auto;
+}
+
+/* Flight Options Styling */
+.flight-options {
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Label and Input Field Styling */
+label {
+    font-weight: bold;
+    color: #666;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #a00c0c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color: #a00c0c;
+    }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    .text {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    #attractions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+}
+
+.flight-entry{
+    padding:10px;
+    margin:10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.flight-entry::after hover{
+    background-color: #e0ebf5;
+}
+
+.flight-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.flight-details{
+    font-size:0.9em;
+    color:#666;
+}
